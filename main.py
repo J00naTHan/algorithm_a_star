@@ -76,6 +76,7 @@ for i in graph.nodes:
     tlist.append(i)
     tcost += i.value
 text = f"\n{tcost} -"
+#não faz sentido tratar como lista, apenas para teste
 for i in tlist:
   text += f' {i.x}.{i.y}'
 print(text)
