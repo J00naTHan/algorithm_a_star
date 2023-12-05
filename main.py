@@ -56,11 +56,6 @@ cameFrom = {start: None}
 frontier.put(start, 0)
 costSoFar = {start: 0}
 
-print(f'{graph.start.x} {graph.start.y}')
-x = graph.neighbors(start)
-for y in x:
-  print(f'{y.x} {y.y}')
-
 goalX = input("\nInforme o valor da coordenada x para onde se quer chegar: ")
 goalY = input("Informe o valor da coordenada y para onde se quer chegar: ")
 
@@ -69,14 +64,14 @@ for i in graph.nodes:
     goal = i
     break
 
-x = aStar(goal)
+aStar(goal)
 tcost, tlist = 0, []
 for i in graph.nodes:
   if i in cameFrom:
     tlist.append(i)
     tcost += i.value
 text = f"\n{tcost} -"
-#não faz sentido tratar como lista, apenas para teste
+#não faz sentido tratar como lista (hash table não possui indíces), apenas para teste
 for i in tlist:
   text += f' {i.x}.{i.y}'
 print(text)
